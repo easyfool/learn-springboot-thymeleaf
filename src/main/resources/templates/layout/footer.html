@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <footer th:fragment="foot(jsPaths)">
+        <!--begin::基础js -->
+    <script th:src="@{'/js/hello.js?t='+${#strings.randomAlphanumeric(9)}}"></script>
+        <!-- Mainly scripts -->
+<!--        <script th:src="@{'/public/js/jquery-3.1.1.min.js?t='+${#strings.randomAlphanumeric(9)}}"></script>-->
+<!--        <script th:src="@{'/public/js/popper.min.js?t='+${#strings.randomAlphanumeric(9)}}"></script>-->
+<!--        <script th:src="@{'/public/js/bootstrap.min.js?t='+${#strings.randomAlphanumeric(9)}}"></script>-->
+<!--        <script th:src="@{'/public/js/plugins/metisMenu/jquery.metisMenu.js?t='+${#strings.randomAlphanumeric(9)}}"></script>-->
+<!--        <script th:src="@{'/public/js/plugins/slimscroll/jquery.slimscroll.min.js?t='+${#strings.randomAlphanumeric(9)}}"></script>-->
+<!--        &lt;!&ndash; Custom and plugin javascript &ndash;&gt;-->
+<!--        <script th:src="@{'/public/js/inspinia.js?t='+${#strings.randomAlphanumeric(9)}}"></script>-->
+<!--        <script th:src="@{'/public/js/plugins/pace/pace.min.js?t='+${#strings.randomAlphanumeric(9)}}"></script>-->
+<!--        <script th:src="@{'/public/js/cookie.js?t='+${#strings.randomAlphanumeric(9)}}"></script>-->
+        <!--end::基础js -->
+        <!--begin::页面js -->
+        <script th:each="jsPaths,status:${#strings.setSplit(jsPaths,',')}" th:src="@{${jsPaths}+'?t='+${#strings.randomAlphanumeric(9)}}"></script>
+        <!--end::页面js -->
+<!--        <script th:src="@{'/modular/index.js?t='+${#strings.randomAlphanumeric(9)}}"></script>-->
+
+  </footer>
+</html>

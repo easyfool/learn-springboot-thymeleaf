@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head th:fragment="head(title,cssPaths)">
+
+        <title th:text="${title}">common title</title>
+        <meta charset="UTF-8"/>
+        <meta name= "viewport"content="width=device-width, initial-scale=1.0">
+
+        <!--begin::基础样式 -->
+<!--        <link th:href="@{/public/css/bootstrap.min.css}" rel="stylesheet">-->
+<!--        <link th:href="@{/public/font-awesome/css/font-awesome.css}" rel="stylesheet">-->
+<!--        <link th:href="@{/public/css/animate.css}" rel="stylesheet">-->
+<!--        <link th:href="@{/public/css/style.css}" rel="stylesheet">-->
+<!--        <link th:href="@{/public/css/my-style.css}" rel="stylesheet">-->
+    <link th:href="@{/css/default.css}" rel="stylesheet">
+        <!--end::基础样式 -->
+
+        <!--begin::页面样式 -->
+        <link rel="stylesheet" type="text/css" th:each="cssPaths,status:${#strings.setSplit(cssPaths,',')}" th:href="@{${cssPaths}}"/>
+        <!--end::页面样式 -->
+
+  </head>
+</html>

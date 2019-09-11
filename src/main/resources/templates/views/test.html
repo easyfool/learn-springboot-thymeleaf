@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro"
+      th:replace="layout/layout(title='我的测试title',
+      cssPaths='/css/test/test.css',
+      jsPaths='/js/test/test.js')">
+<!-- layout文件路径-->
+<div th:fragment="content">
+     
+  <div><span>hello world</span></div>
+</div>
+
+</html>
